@@ -1,42 +1,22 @@
 #include "whatever.hpp"
 
-template<typename temp>
-
-void swap(temp &a, temp &b)
+int main( void )
 {
-    temp c = b;
-    b = a;
-    a = c;
-}
+    int a = 2;
+    int b = 3;
 
-template<typename temp>
+    ::swap(a, b);
 
-temp &min(temp &a, temp &b)
-{
-    if (a < b)
-        return a;
-    return b;
-}
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
 
-template<typename temp>
+    ::swap(c, d);
 
-temp &max(temp &a, temp &b)
-{
-    if (a > b)
-        return a;
-    return b;
-}
-
-
-int main()
-{
-    float a = 2.2;
-    float b = 2.2;
-    std::cout << "pointer: " << &b << std::endl;
-    std::cout << "pointer: " << &a << std::endl;
-    swap(a, b);
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << max(a, b) << "pointer: " << &b << std::endl;
-    std::cout << min(a, b) << "pointer: " << &b << std::endl;
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+    return 0;
 }

@@ -3,14 +3,31 @@
 
 #include <iostream>
 
+template<typename temp>
 
-class whatever
+void swap(temp &a, temp &b)
 {
-private:
-    /* data */
-public:
-    whatever();
-    ~whatever();
-};
+    temp c = b;
+    b = a;
+    a = c;
+}
+
+template<typename temp>
+
+temp &min(temp &a, temp &b)
+{
+    if (a < b)
+        return a;
+    return b;
+}
+
+template<typename temp>
+
+temp &max(temp &a, temp &b)
+{
+    if (a > b)
+        return a;
+    return b;
+}
 
 #endif
