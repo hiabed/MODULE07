@@ -12,7 +12,6 @@ private:
     T *_a;
     unsigned int _n;
 public:
-    //member functions;
     size_t size() const
     {
         return _n;
@@ -20,6 +19,7 @@ public:
     //orthodox canolical form;
     Array()
     {
+        _n = 0;
         _a = NULL;
     }
     Array(unsigned int n)
@@ -35,13 +35,18 @@ public:
     {
         if (this != &other)
         {
-            delete[] _a;
             _n = other._n;
-            _a = new T[_n](); // deep copy;
-            for (int i = 0; i < _n; i++)
+            _a = new T[_n]();
+            for (unsigned int i = 0; i < _n; i++)
                 this->_a[i] = other._a[i];
         }
         return *this;
+    }
+    T &operator[](unsigned int index)
+    {
+        if (index < _n)
+            return _a[index];
+        throw std::out_of_range("Index out of range");
     }
     ~Array()
     {
