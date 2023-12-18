@@ -9,6 +9,7 @@ class Array
 {
 private:
     T *_a;
+    unsigned int _n;
 public:
     Array()
     {
@@ -16,7 +17,8 @@ public:
     }
     Array(unsigned int n)
     {
-        _a = new T[n]();
+        _n = n;
+        _a = new T[_n]();
     }
     Array(const Array &other)
     {
@@ -25,7 +27,13 @@ public:
     Array &operator=(const Array &other)
     {
         if (this != &other)
-            this->_a = other._a;
+        {
+            delete[] _a;
+            _n = other._n;
+            _a = new T[_n](); // deep copy;
+            for (int i = 0; i < _n; i++)
+                this->_a[i] = other._a[i];
+        }
         return *this;
     }
     ~Array()

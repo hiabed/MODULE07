@@ -2,7 +2,7 @@
 
 int main()
 {
-    int * a = new int[3]();
+    int * a = new int[4]();
     std::cout << a[0] << std::endl;
     std::cout << a[1] << std::endl;
     std::cout << a[2] << std::endl;
