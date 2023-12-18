@@ -8,9 +8,16 @@ template<typename T>
 class Array
 {
 private:
+    //private attributes;
     T *_a;
     unsigned int _n;
 public:
+    //member functions;
+    size_t size() const
+    {
+        return _n;
+    }
+    //orthodox canolical form;
     Array()
     {
         _a = NULL;
