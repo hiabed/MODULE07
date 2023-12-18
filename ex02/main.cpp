@@ -1,6 +1,7 @@
 #include "Array.hpp"
 
-void main1()
+
+int main()
 {
     unsigned int j = 4;
     Array<int> A(j);
@@ -18,10 +19,5 @@ void main1()
     {
         std::cerr << e.what() << '\n';
     }
-}
-
-int main()
-{
-    main1();
     system("leaks Array");
 }
