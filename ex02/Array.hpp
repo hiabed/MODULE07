@@ -1,17 +1,37 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
-// template<class T>
+#include <iostream>
+
+template<typename T>
 
 class Array
 {
 private:
-    // T a;
+    T *_a;
 public:
-    Array();
-    Array(const Array &other);
-    Array &operator=(const Array &other);
-    ~Array();
+    Array()
+    {
+        _a = NULL;
+    }
+    Array(unsigned int n)
+    {
+        _a = new T[n]();
+    }
+    Array(const Array &other)
+    {
+        *this = other;
+    }
+    Array &operator=(const Array &other)
+    {
+        if (this != &other)
+            this->_a = other._a;
+        return *this;
+    }
+    ~Array()
+    {
+        delete[] _a;
+    }
 };
 
 #endif

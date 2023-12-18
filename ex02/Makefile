@@ -4,7 +4,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CXXFILES = main.cpp Array.cpp\
+CXXFILES = main.cpp \
 
 OBJ = ${CXXFILES:.cpp=.o}
 
