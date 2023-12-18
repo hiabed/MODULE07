@@ -1,10 +1,12 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
+// template<class T>
+
 class Array
 {
 private:
-    /* data */
+    // T a;
 public:
     Array();
     Array(const Array &other);

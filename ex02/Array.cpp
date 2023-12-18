@@ -4,7 +4,7 @@
 
 Array::Array()
 {
-
+    // T a[];
 }
 
 Array::Array(const Array &other)
@@ -12,9 +12,12 @@ Array::Array(const Array &other)
     *this = other;
 }
 
-Array::
+Array &Array::operator=(const Array &other)
+{
+    (void)other;
+    return *this;
+}
 
 Array::~Array()
 {
-
 }
