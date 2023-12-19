@@ -8,7 +8,7 @@ template<typename T>
 class Array
 {
 private:
-    //private attributes;
+    // private attributes;
     T *_a;
     unsigned int _n;
 public:
@@ -16,7 +16,7 @@ public:
     {
         return _n;
     }
-    //orthodox canolical form;
+    // orthodox canolical form;
     Array()
     {
         _n = 0;
@@ -29,12 +29,14 @@ public:
     }
     Array(const Array &other)
     {
+        _a = NULL;
         *this = other;
     }
     Array &operator=(const Array &other)
     {
         if (this != &other)
         {
+            delete[] _a;
             _n = other._n;
             _a = new T[_n]();
             for (unsigned int i = 0; i < _n; i++)
@@ -42,21 +44,23 @@ public:
         }
         return *this;
     }
+    ~Array()
+    {
+        delete[] _a;
+    }
+    //  subscript operator overloading;
     T &operator[](unsigned int index)
     {
         if (index < _n)
             return _a[index];
         throw std::out_of_range("Index out of range");
     }
+    // if the object declared is const;
     const T &operator[](unsigned int index) const
     {
         if (index < _n)
             return _a[index];
         throw std::out_of_range("Index out of range");
-    }
-    ~Array()
-    {
-        delete[] _a;
     }
 };
 
