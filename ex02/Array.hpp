@@ -48,6 +48,12 @@ public:
             return _a[index];
         throw std::out_of_range("Index out of range");
     }
+    const T &operator[](unsigned int index) const
+    {
+        if (index < _n)
+            return _a[index];
+        throw std::out_of_range("Index out of range");
+    }
     ~Array()
     {
         delete[] _a;
