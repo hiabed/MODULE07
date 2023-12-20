@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-template <typename temp>
+template <typename t1, typename t2>
 
-void iter(temp *arr, int length, void (*function)(temp const &))
+void iter(t1 *arr, int length, void (*function)(t2 &))
 {
     for (int i = 0; i < length; i++)
         function(arr[i]);
